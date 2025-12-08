@@ -1,0 +1,57 @@
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - ToDoList</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">ToDoList</div>
+    <div class="user-area">
+      <span id="user-email">...</span>
+      <button id="logoutBtn" class="btn-ghost">Đăng xuất</button>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <div class="controls">
+      <button id="open-create" class="btn-primary">+ Tạo task</button>
+      <input id="search" placeholder="Tìm kiếm..." />
+    </div>
+
+    <div class="board" id="board">
+      <div class="column" data-status="todo">
+        <h3>To Do <span id="count-todo" class="pill">0</span></h3>
+        <div id="col-todo" class="col-list"></div>
+      </div>
+      <div class="column" data-status="inprogress">
+        <h3>In Progress <span id="count-in" class="pill">0</span></h3>
+        <div id="col-inprogress" class="col-list"></div>
+      </div>
+      <div class="column" data-status="done">
+        <h3>Done <span id="count-done" class="pill">0</span></h3>
+        <div id="col-done" class="col-list"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal"><div class="card modal-card">
+    <h2>Tạo Task</h2>
+    <input id="task-title" placeholder="Tiêu đề" />
+    <textarea id="task-desc" placeholder="Mô tả"></textarea>
+    <div class="row">
+      <select id="task-priority"><option value="normal">Bình thường</option><option value="high">Cao</option></select>
+      <select id="task-status"><option value="todo">To Do</option><option value="inprogress">In Progress</option><option value="done">Done</option></select>
+    </div>
+    <div style="margin-top:10px;text-align:right">
+      <button id="modal-cancel" class="btn-ghost">Huỷ</button>
+      <button id="modal-save" class="btn-primary">Lưu</button>
+    </div>
+  </div></div>
+
+  <!-- Load firebase + app scripts as ES modules -->
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
