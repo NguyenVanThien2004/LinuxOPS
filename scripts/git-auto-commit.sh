@@ -16,7 +16,7 @@ fi
 # Kiểm tra nếu có commit chưa push
 if [ -n "$(git log origin/main..main)" ]; then
     echo "Đang push các commit còn tồn đọng..."
-    git push origin main
+    git push origin "$(git branch --show-current)"
 else
     echo "Không có commit nào để push."
 fi
